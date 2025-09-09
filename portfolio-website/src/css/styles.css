@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: #ffffff;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav {
+  margin: 20px 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+footer {
+  background: #868686;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+.project {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.main-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #bdbcbc;
+  padding: 0;
+  margin: 0 0 30px 0;
+  border-radius: 8px 8px 0 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.tab-nav li {
+  margin: 0;
+}
+
+.tab-nav a {
+  display: block;
+  padding: 15px 30px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab-nav a:hover,
+.tab-nav a:focus,
+.tab-nav .active {
+  background-color: #666666;
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
