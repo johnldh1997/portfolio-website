@@ -90,14 +90,87 @@ h3 {
   color: #333;
   text-decoration: none;
   font-weight: 500;
-  transition: background 0.2s, color 0.2s;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.tab-nav a::before,
+.tab-nav a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, #666666 0%, orange 100%);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-nav a::after {
+  background: linear-gradient(270deg, #666666 0%, orange 100%);
+}
+
+.tab-nav a::before {
+  top: 8px;
+  transform-origin: left;
+}
+
+.tab-nav a::after {
+  bottom: 8px;
+  transform-origin: right;
+}
+
+.tab-nav a:hover::before,
+.tab-nav a:focus::before {
+  transform: scaleX(1);
+}
+
+.tab-nav a:hover::after,
+.tab-nav a:focus::after {
+  transform: scaleX(1);
 }
 
 .tab-nav a:hover,
-.tab-nav a:focus,
+.tab-nav a:focus {
+  color: #666666;
+}
+
 .tab-nav .active {
   background-color: #666666;
   color: #000;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin: 15px 0;
+}
+
+.contact-list a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.contact-list a:hover {
+  color: orange;
+}
+
+.contact-list i {
+  margin-right: 10px;
+  font-size: 1.3em;
+}
+
+.container {
+  margin-left: 40px; /* Adjust as needed */
 }
 
 @media (max-width: 600px) {
