@@ -5,17 +5,18 @@ This is a simple portfolio website project created using HTML, CSS, and JavaScri
 ## Project Structure
 
 ```
-portfolio-website
-├── src
-│   ├── css
-│   │   └── styles.css       # Styles for the portfolio website
-│   ├── js
-│   │   └── main.js          # JavaScript for interactivity
-│   ├── about.html           # About page
-│   ├── cv.html              # CV page
-│   ├── portfolio.html        # Portfolio page
-│   └── index.html           # Main entry point
-└── README.md                # Project documentation
+📦 portfolio-website
+ ┣ 📂 docs
+ ┃ ┣ 📂 css
+ ┃ ┃ ┗ 📄 styles.css
+ ┃ ┣ 📂 js
+ ┃ ┃ ┗ 📄 main.js
+ ┃ ┣ 📄 about.html
+ ┃ ┣ 📄 contact.html
+ ┃ ┣ 📄 cv.html
+ ┃ ┣ 📄 index.html  
+ ┃ ┗ 📄 portfolio.html
+ ┗ 📄 README.md    
 ```
 
 ## Features
