@@ -25,9 +25,9 @@ To keep the root production workspace modular and maintainable, all production-r
 
 ## 🛠️ Technology Stack & Core Competencies
 ### Languages: 
-HTML5 (Semantic Document Structure), 
+HTML5 (Semantic Document Structure) 
 
-CSS3 (Custom Root Variables & Keyframes), 
+CSS3 (Custom Root Variables & Keyframes) 
 
 Vanilla JavaScript (ES6+ Native DOM Manipulation)
 
@@ -36,7 +36,14 @@ Inter Typography Ecosystem
 
 FontAwesome Icons
 
-### Development Workflow: Visual Studio Code local IDE development, Live Server local workspace emulation, Git configuration control trackers, GitHub Pages static cloud hosting deployment
+### Development Workflow: 
+Visual Studio Code local IDE development 
+
+Live Server local workspace emulation 
+
+Git configuration control trackers 
+
+GitHub Pages static cloud hosting deployment
 
 ## 🎨 Engineering & Frontend Techniques Used
 ### 1. Light / Dark Theme Switcher
