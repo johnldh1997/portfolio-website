@@ -1,61 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Curriculum Vitae</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <h1 class="main-title">My Portfolio</h1>
-      <nav>
-        <ul class="tab-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="cv.html">CV</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section id="education" class="container">
-        <h2>Education</h2>
-        <ul>
-          <li><strong>Degree</strong> - Institution Name (Year)</li>
-          <li><strong>Degree</strong> - Institution Name (Year)</li>
-        </ul>
-      </section>
-      <section id="work-experience" class="container">
-        <h2>Work Experience</h2>
-        <ul>
-          <li>
-            <strong>Job Title</strong> - Company Name (Year - Year)
-            <p>Brief description of responsibilities and achievements.</p>
-          </li>
-          <li>
-            <strong>Job Title</strong> - Company Name (Year - Year)
-            <p>Brief description of responsibilities and achievements.</p>
-          </li>
-        </ul>
-      </section>
-      <section id="skills" class="container">
-        <h2>Skills</h2>
-        <ul>
-          <li>Skill 1</li>
-          <li>Skill 2</li>
-          <li>Skill 3</li>
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
-    <script src="js/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Lee | CV</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">JOHN<span>.</span>LEE</a>
+  <div class="header-right">
+    <nav>
+      <ul class="tab-nav">
+        <li><a href="index.html"><span>Home</span></a></li>
+        <li><a href="about.html"><span>About</span></a></li>
+        <li><a href="cv.html" class="active"><span>CV</span></a></li>
+        <li><a href="portfolio.html"><span>Portfolio</span></a></li>
+        <li><a href="contact.html"><span>Contact</span></a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+      <div class="toggle-icon-wrap">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </div>
+    </button>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobilenav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="cv.html" class="active">CV</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main>
+  <section class="container">
+    <div class="section-label">Education</div>
+    <div class="cv-entry">
+      <strong>Bachelor of Computer and Information Science</strong>
+      <div class="meta">Auckland University of Technology · 2017 – 2021</div>
+      <p>Major in Software Development</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="section-label">Work experience</div>
+    <div class="cv-entry">
+      <strong>Long Life Assistant – Nightfill</strong>
+      <div class="meta">Countdown · February 2022 – September 2023</div>
+      <ul class="cv-bullets">
+        <li>Efficient inventory and time management across nightfill shifts</li>
+        <li>Reliable and collaborative teamwork in a fast-paced environment</li>
+      </ul>
+    </div>
+    <div class="cv-entry">
+      <strong>Volunteer</strong>
+      <div class="meta">Robogals Auckland · April 2021 – May 2021</div>
+      <ul class="cv-bullets">
+        <li>Delivered STEM workshops and taught LEGO MINDSTORM EV3 programming to classrooms of 30+ students</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="section-label">Technical skills</div>
+    <div class="pill-group">
+      <div class="pill-group-label">Languages & Frameworks</div>
+      <div class="skill-pills">
+        <span class="pill">Java</span><span class="pill">Python</span><span class="pill">SQL (PostgreSQL)</span>
+        <span class="pill">Flutter</span><span class="pill">Dart</span><span class="pill">JavaScript</span>
+        <span class="pill">HTML</span><span class="pill">PHP</span><span class="pill">C</span>
+        <span class="pill">Firebase</span><span class="pill">Git</span>
+      </div>
+    </div>
+    <div class="pill-group">
+      <div class="pill-group-label">BI & Analytics</div>
+      <div class="skill-pills">
+        <span class="pill">Power BI</span><span class="pill">DAX</span><span class="pill">DataGrip</span>
+      </div>
+    </div>
+    <div class="pill-group">
+      <div class="pill-group-label">AI & Modern Workflow</div>
+      <div class="skill-pills">
+        <span class="pill">AI-assisted development</span><span class="pill">Prompt engineering</span>
+      </div>
+    </div>
+    <div class="pill-group">
+      <div class="pill-group-label">Project Management</div>
+      <div class="skill-pills">
+        <span class="pill">Scrum</span><span class="pill">Agile</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="section-label">Interests & misc</div>
+    <div class="skill-pills">
+      <span class="pill">Korean (fluent)</span>
+      <span class="pill">Full driver's licence</span>
+    </div>
+  </section>
+</main>
+
+<footer>© 2024 Donghyeon Lee (John Lee). All rights reserved.</footer>
+
+<script src="js/main.js"></script>
+</body>
 </html>

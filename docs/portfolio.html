@@ -1,51 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <h1 class="main-title">My Portfolio</h1>
-      <nav>
-        <ul class="tab-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="cv.html">CV</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="container">
-        <h2>My Projects</h2>
-        <div class="project">
-          <h3>Project Title 1</h3>
-          <p>Description of project 1. This project involves...</p>
-          <p>Technologies used: HTML, CSS, JavaScript</p>
-          <a href="https://link-to-live-demo.com" target="_blank">Live Demo</a>
-          <a href="https://link-to-repository.com" target="_blank">View Code</a>
-        </div>
-        <div class="project">
-          <h3>Project Title 2</h3>
-          <p>Description of project 2. This project involves...</p>
-          <p>Technologies used: HTML, CSS, JavaScript</p>
-          <a href="https://link-to-live-demo.com" target="_blank">Live Demo</a>
-          <a href="https://link-to-repository.com" target="_blank">View Code</a>
-        </div>
-        <!-- Add more projects as needed -->
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2023 My Portfolio. All rights reserved.</p>
-    </footer>
-    <script src="js/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Lee | Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">JOHN<span>.</span>LEE</a>
+  <div class="header-right">
+    <nav>
+      <ul class="tab-nav">
+        <li><a href="index.html"><span>Home</span></a></li>
+        <li><a href="about.html"><span>About</span></a></li>
+        <li><a href="cv.html"><span>CV</span></a></li>
+        <li><a href="portfolio.html" class="active"><span>Portfolio</span></a></li>
+        <li><a href="contact.html"><span>Contact</span></a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+      <div class="toggle-icon-wrap">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </div>
+    </button>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobilenav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="cv.html">CV</a>
+  <a href="portfolio.html" class="active">Portfolio</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main>
+  <section class="container">
+    <div class="section-label">My projects</div>
+
+    <div class="project-card">
+      <div class="project-tag">Mobile · Client Project</div>
+      <h3>NZ Nutrition Foundation Recipe App</h3>
+      <p class="proj-desc">A cross-platform mobile app built for the NZ Nutrition Foundation to encourage nutritious cooking among youth — developed in a team of 5 with real client feedback cycles throughout.</p>
+      <ul class="proj-bullets">
+        <li>Built with Flutter and Dart, targeting both iOS and Android from a single codebase</li>
+        <li>Implemented cloud storage, user authentication, and back-end data architecture using Firebase</li>
+        <li>Managed feature delivery via weekly Scrum sprints and biweekly client consultations</li>
+      </ul>
+      <div class="tech-pills">
+        <span class="tech-pill">Flutter</span><span class="tech-pill">Dart</span>
+        <span class="tech-pill">Firebase</span><span class="tech-pill">Scrum</span><span class="tech-pill">Agile</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Analytics · BI</div>
+      <h3>European Bike Sales Analytics Pipeline</h3>
+      <p class="proj-desc">An end-to-end analytics pipeline for a European bike retailer — from raw data through a structured PostgreSQL database to an interactive Power BI executive dashboard.</p>
+      <ul class="proj-bullets">
+        <li>Engineered a relational database in PostgreSQL using DataGrip to clean, stage, and structure multi-year retail datasets</li>
+        <li>Established a live data pipeline connecting the local server natively to Power BI for instant refreshes</li>
+        <li>Built custom DAX measures to track dynamic profit margins and isolate high-value age demographics</li>
+      </ul>
+      <div class="tech-pills">
+        <span class="tech-pill">Power BI</span><span class="tech-pill">PostgreSQL</span>
+        <span class="tech-pill">SQL</span><span class="tech-pill">DAX</span><span class="tech-pill">DataGrip</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/johnldh1997/European-Bike-Sales-Analytics-Pipeline" target="_blank">
+          <i class="fab fa-github"></i> View code
+        </a>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>© 2024 Donghyeon Lee (John Lee). All rights reserved.</footer>
+
+<script src="js/main.js"></script>
+</body>
 </html>
