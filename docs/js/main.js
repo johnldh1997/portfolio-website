@@ -20,7 +20,7 @@ function toggleMenu() {
 // ── TYPED ANIMATION (index only) ──
 const typedEl = document.getElementById('typed');
 if (typedEl) {
-  const words = ['Data Analyst', 'Flutter Developer', 'BI Engineer', 'Software Developer', 'Problem Solver'];
+  const words = ['Data Analyst', 'Flutter Developer', 'Software Developer', 'Problem Solver'];
   let wi = 0, ci = 0, deleting = false;
 
   function tick() {
