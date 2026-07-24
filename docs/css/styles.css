@@ -1,8 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-
 @view-transition { navigation: auto; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+::selection { background: var(--orange); color: #fff; }
+
+html { scrollbar-width: thin; scrollbar-color: var(--border) var(--bg); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--orange); }
 
 /* ── ACCESSIBILITY ── */
 a:focus-visible, button:focus-visible {

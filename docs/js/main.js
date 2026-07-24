@@ -1,7 +1,9 @@
 // ── THEME TOGGLE ──
 function toggleTheme() {
   document.documentElement.classList.toggle('light-mode');
-  localStorage.setItem('theme', document.documentElement.classList.contains('light-mode') ? 'light' : 'dark');
+  const isLight = document.documentElement.classList.contains('light-mode');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', isLight ? '#F8F8F8' : '#0F0F0F');
 }
 
 // ── BURGER MENU ──
