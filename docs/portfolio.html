@@ -6,6 +6,7 @@ description: "Case studies and projects by John Lee, including data analytics pi
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% include theme-init.html %}
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }}</title>
@@ -23,10 +24,10 @@ description: "Case studies and projects by John Lee, including data analytics pi
 {% include header.html %}
 
 <main>
-  <section class="container">
+  <section class="container entrance">
     <div class="section-label">My projects</div>
 
-    <div class="project-card">
+    <div class="project-card reveal">
       <div class="project-tag">Mobile · Client Project</div>
       <h3>NZ Nutrition Foundation Recipe App</h3>
       <p class="proj-desc">A cross-platform mobile app built for the NZ Nutrition Foundation to encourage nutritious cooking among youth — developed in a team of 5 with real client feedback cycles throughout.</p>
@@ -44,7 +45,7 @@ description: "Case studies and projects by John Lee, including data analytics pi
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card reveal">
       <div class="project-tag">Analytics · BI</div>
       <h3>European Bike Sales Analytics Pipeline</h3>
       <p class="proj-desc">An end-to-end analytics pipeline for a European bike retailer — from raw data through a structured PostgreSQL database to an interactive Power BI executive dashboard.</p>
@@ -67,7 +68,7 @@ description: "Case studies and projects by John Lee, including data analytics pi
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card reveal">
       <div class="project-tag">Data Engineering · Analytics</div>
       <h3>NZD Exchange Rate Archive</h3>
       <p class="proj-desc">An automated foreign exchange tracking pipeline connecting Google Sheets to Power BI via the Google Sheets API to archive and analyze New Zealand Dollar (NZD) historical rate trends.</p>
@@ -90,7 +91,7 @@ description: "Case studies and projects by John Lee, including data analytics pi
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card reveal">
       <div class="project-tag">Mobile App · Transport</div>
       <h3>Auckland Transit</h3>
       <p class="proj-desc">A personal, from-scratch alternative to Auckland Transport’s official app — features live vehicle tracking, journey planning with real-time GPS step tracking, background-surviving trip notifications, and an offline-first schedule database.</p>

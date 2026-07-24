@@ -30,6 +30,9 @@ body {
   color: var(--text);
   line-height: 1.6;
   transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── HEADER ── */
@@ -294,6 +297,16 @@ p  { color: var(--muted); font-size: 15px; }
 ul { color: var(--muted); font-size: 15px; padding-left: 20px; }
 li { margin: 7px 0; }
 
+/* ── PAGE ENTRANCE ── */
+.entrance {
+  opacity: 0;
+  animation: fadeUp 0.6s ease-out forwards;
+}
+.entrance:nth-of-type(1) { animation-delay: 0.1s; }
+.entrance:nth-of-type(2) { animation-delay: 0.2s; }
+.entrance:nth-of-type(3) { animation-delay: 0.3s; }
+.entrance:nth-of-type(4) { animation-delay: 0.4s; }
+
 /* ── PILLS ── */
 .pill-group { margin-bottom: 16px; }
 .pill-group:last-child { margin-bottom: 0; }
@@ -367,6 +380,31 @@ footer {
   background: var(--surface); border-top: 1px solid var(--border);
   text-align: center; padding: 18px; font-size: 12px;
   color: var(--muted); transition: background 0.3s, border-color 0.3s;
+  margin-top: auto;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── CURSOR TRAIL ── */
+.cursor-trail-dot {
+  position: fixed;
+  left: 0; top: 0;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: trailFade 0.6s ease-out forwards;
 }
 
 /* ── TABLET ── */
@@ -411,4 +449,8 @@ footer {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
+}
+@keyframes trailFade {
+  from { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  to   { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
 }

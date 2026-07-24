@@ -1,15 +1,8 @@
 // ── THEME TOGGLE ──
 function toggleTheme() {
-  document.body.classList.toggle('light-mode');
-  localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+  document.documentElement.classList.toggle('light-mode');
+  localStorage.setItem('theme', document.documentElement.classList.contains('light-mode') ? 'light' : 'dark');
 }
-
-// Persist theme across pages
-(function () {
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-mode');
-  }
-})();
 
 // ── BURGER MENU ──
 function toggleMenu() {
@@ -44,3 +37,33 @@ const yearEl = document.getElementById('year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
+
+// ── SCROLL REVEAL ──
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach((el) => revealObserver.observe(el));
+}
+
+// ── CURSOR TRAIL ──
+let lastTrailTime = 0;
+document.addEventListener('pointermove', (e) => {
+  if (e.pointerType !== 'mouse') return;
+  const now = Date.now();
+  if (now - lastTrailTime < 30) return;
+  lastTrailTime = now;
+
+  const dot = document.createElement('span');
+  dot.className = 'cursor-trail-dot';
+  dot.style.left = e.clientX + 'px';
+  dot.style.top = e.clientY + 'px';
+  document.body.appendChild(dot);
+  dot.addEventListener('animationend', () => dot.remove());
+});
