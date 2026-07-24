@@ -1,0 +1,32 @@
+---
+title: "John Lee | 404"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include theme-init.html %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }}</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+{% include header.html %}
+
+<div class="hero" id="main-content">
+  <div class="hero-eyebrow">404 · Lost in space</div>
+  <h1 class="hero-name">This page <span class="highlight">doesn't exist</span></h1>
+  <p class="hero-tagline">Looks like this link took a wrong turn. Let's get you back on track.</p>
+  <div class="hero-cta">
+    <a href="{{ '/' | relative_url }}" class="btn-primary">Back to home</a>
+    <a href="{{ '/portfolio/' | relative_url }}" class="btn-ghost">See my work</a>
+  </div>
+</div>
+
+{% include footer.html %}
+</body>
+</html>

@@ -4,3 +4,4 @@ baseurl: "/portfolio-website"
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-sitemap

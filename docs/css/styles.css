@@ -1,6 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
+@view-transition { navigation: auto; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── ACCESSIBILITY ── */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 8px;
+  background: var(--orange);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  z-index: 10000;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 8px; }
 
 :root {
   --orange: #F97316;
@@ -406,6 +430,8 @@ li { margin: 7px 0; }
 }
 
 /* ── CV ── */
+.cv-download { max-width: 760px; width: 88%; margin: 0 auto 20px; text-align: right; }
+.cv-download .btn-primary { display: inline-flex; align-items: center; gap: 8px; }
 .cv-entry { padding: 16px 0; border-bottom: 1px solid var(--border); }
 .cv-entry:last-child { border-bottom: none; padding-bottom: 0; }
 .cv-entry strong { color: var(--text); font-size: 15px; font-weight: 700; }
