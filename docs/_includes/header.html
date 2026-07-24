@@ -1,13 +1,13 @@
 <header>
-  <a class="logo" href="index.html">JOHN<span>.</span>LEE</a>
+  <a class="logo" href="{{ '/' | relative_url }}">JOHN<span>.</span>LEE</a>
   <div class="header-right">
     <nav>
       <ul class="tab-nav">
-        <li><a href="index.html"{% if page.nav == "home" %} class="active"{% endif %}><span>Home</span></a></li>
-        <li><a href="about.html"{% if page.nav == "about" %} class="active"{% endif %}><span>About</span></a></li>
-        <li><a href="cv.html"{% if page.nav == "cv" %} class="active"{% endif %}><span>CV</span></a></li>
-        <li><a href="portfolio.html"{% if page.nav == "portfolio" %} class="active"{% endif %}><span>Portfolio</span></a></li>
-        <li><a href="contact.html"{% if page.nav == "contact" %} class="active"{% endif %}><span>Contact</span></a></li>
+        <li><a href="{{ '/' | relative_url }}"{% if page.nav == "home" %} class="active"{% endif %}><span>Home</span></a></li>
+        <li><a href="{{ '/about/' | relative_url }}"{% if page.nav == "about" %} class="active"{% endif %}><span>About</span></a></li>
+        <li><a href="{{ '/cv/' | relative_url }}"{% if page.nav == "cv" %} class="active"{% endif %}><span>CV</span></a></li>
+        <li><a href="{{ '/portfolio/' | relative_url }}"{% if page.nav == "portfolio" %} class="active"{% endif %}><span>Portfolio</span></a></li>
+        <li><a href="{{ '/contact/' | relative_url }}"{% if page.nav == "contact" %} class="active"{% endif %}><span>Contact</span></a></li>
       </ul>
     </nav>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
@@ -30,9 +30,9 @@
 </header>
 
 <div class="mobile-nav" id="mobilenav">
-  <a href="index.html"{% if page.nav == "home" %} class="active"{% endif %}>Home</a>
-  <a href="about.html"{% if page.nav == "about" %} class="active"{% endif %}>About</a>
-  <a href="cv.html"{% if page.nav == "cv" %} class="active"{% endif %}>CV</a>
-  <a href="portfolio.html"{% if page.nav == "portfolio" %} class="active"{% endif %}>Portfolio</a>
-  <a href="contact.html"{% if page.nav == "contact" %} class="active"{% endif %}>Contact</a>
+  <a href="{{ '/' | relative_url }}"{% if page.nav == "home" %} class="active"{% endif %}>Home</a>
+  <a href="{{ '/about/' | relative_url }}"{% if page.nav == "about" %} class="active"{% endif %}>About</a>
+  <a href="{{ '/cv/' | relative_url }}"{% if page.nav == "cv" %} class="active"{% endif %}>CV</a>
+  <a href="{{ '/portfolio/' | relative_url }}"{% if page.nav == "portfolio" %} class="active"{% endif %}>Portfolio</a>
+  <a href="{{ '/contact/' | relative_url }}"{% if page.nav == "contact" %} class="active"{% endif %}>Contact</a>
 </div>

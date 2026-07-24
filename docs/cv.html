@@ -2,6 +2,9 @@
 nav: cv
 title: "John Lee | CV"
 description: "Education, projects, and technical skills of John Lee — CS graduate with expertise in Power BI, SQL, Flutter, and data analytics."
+permalink: /cv/
+redirect_from:
+  - /cv.html
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +17,9 @@ description: "Education, projects, and technical skills of John Lee — CS gradu
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://johnldh1997.github.io/portfolio-website/{{ page.name }}" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -55,7 +58,7 @@ description: "Education, projects, and technical skills of John Lee — CS gradu
       <div class="meta">Flutter · Firebase · Scrum</div>
       <p>Cross-platform mobile app built for a real client, developed in a team of 5.</p>
     </div>
-    <a class="cv-projects-link" href="portfolio.html">See full write-ups on the Portfolio page →</a>
+    <a class="cv-projects-link" href="{{ '/portfolio/' | relative_url }}">See full write-ups on the Portfolio page →</a>
   </section>
 
   <section class="container entrance">

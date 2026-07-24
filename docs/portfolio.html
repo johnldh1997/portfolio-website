@@ -2,6 +2,9 @@
 nav: portfolio
 title: "John Lee | Portfolio"
 description: "Case studies and projects by John Lee, including data analytics pipelines, a cross-platform mobile app, and the Auckland Transit app."
+permalink: /portfolio/
+redirect_from:
+  - /portfolio.html
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +17,9 @@ description: "Case studies and projects by John Lee, including data analytics pi
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://johnldh1997.github.io/portfolio-website/{{ page.name }}" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -49,7 +52,7 @@ description: "Case studies and projects by John Lee, including data analytics pi
       <div class="project-tag">Analytics · BI</div>
       <h3>European Bike Sales Analytics Pipeline</h3>
       <p class="proj-desc">An end-to-end analytics pipeline for a European bike retailer — turning multi-year raw sales data into a Power BI executive dashboard tracking $61.78M in revenue and 33.21% profit margin across 6 countries.</p>
-      <img class="project-screenshot" src="images/projects/bike-sales-dashboard.png" alt="European Bike Sales Power BI dashboard showing total profit, revenue, profit margin, and performance by country" loading="lazy" />
+      <img class="project-screenshot" src="{{ '/images/projects/bike-sales-dashboard.png' | relative_url }}" alt="European Bike Sales Power BI dashboard showing total profit, revenue, profit margin, and performance by country" loading="lazy" />
       <ul class="proj-bullets">
         <li>Engineered a relational database in PostgreSQL using DataGrip to clean, stage, and structure multi-year retail datasets spanning $61.78M in revenue and $20.52M in profit</li>
         <li>Established a live data pipeline connecting the local server natively to Power BI for instant refreshes</li>
@@ -73,7 +76,7 @@ description: "Case studies and projects by John Lee, including data analytics pi
       <div class="project-tag">Data Engineering · Analytics</div>
       <h3>NZD Exchange Rate Archive</h3>
       <p class="proj-desc">An automated foreign exchange tracking pipeline connecting Google Sheets to Power BI via the Google Sheets API — archiving and analyzing NZD exchange rates against AUD, KRW, and USD with daily-refreshed trend and volatility charts.</p>
-      <img class="project-screenshot" src="images/projects/nzd-exchange-demo.gif" alt="NZD Foreign Exchange Analytics Power BI dashboard demo showing currency tile interactions" loading="lazy" />
+      <img class="project-screenshot" src="{{ '/images/projects/nzd-exchange-demo.gif' | relative_url }}" alt="NZD Foreign Exchange Analytics Power BI dashboard demo showing currency tile interactions" loading="lazy" />
       <ul class="proj-bullets">
         <li>Programmatically fetched and structured historical rate datasets for AUD, KRW, and USD against the New Zealand Dollar</li>
         <li>Integrated Google Sheets with Power BI via the Google Sheets REST API for automated, cloud-based dashboard refreshes</li>

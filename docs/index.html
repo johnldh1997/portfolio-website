@@ -14,9 +14,9 @@ description: "Portfolio of John Lee (Donghyeon Lee), a Computer Science graduate
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://johnldh1997.github.io/portfolio-website/{{ page.name }}" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -32,26 +32,26 @@ description: "Portfolio of John Lee (Donghyeon Lee), a Computer Science graduate
     <span class="typed-text" id="typed"></span><span class="cursor"></span>
   </div>
   <div class="hero-cta">
-    <a href="portfolio.html" class="btn-primary">See my work</a>
-    <a href="contact.html" class="btn-ghost">Get in touch</a>
+    <a href="{{ '/portfolio/' | relative_url }}" class="btn-primary">See my work</a>
+    <a href="{{ '/contact/' | relative_url }}" class="btn-ghost">Get in touch</a>
   </div>
   <div class="teaser-row">
-    <a class="teaser-card" href="portfolio.html">
+    <a class="teaser-card" href="{{ '/portfolio/' | relative_url }}">
       <i class="fas fa-chart-line teaser-icon"></i>
       <div class="teaser-stat">$61M+</div>
       <div class="teaser-label">Analyzed in dashboards →</div>
     </a>
-    <a class="teaser-card" href="about.html">
+    <a class="teaser-card" href="{{ '/about/' | relative_url }}">
       <i class="fas fa-location-dot teaser-icon"></i>
       <div class="teaser-stat">Auckland, NZ</div>
       <div class="teaser-label">Data-curious CS grad →</div>
     </a>
-    <a class="teaser-card" href="cv.html">
+    <a class="teaser-card" href="{{ '/cv/' | relative_url }}">
       <i class="fas fa-graduation-cap teaser-icon"></i>
       <div class="teaser-stat">AUT '21</div>
       <div class="teaser-label">Computer Science grad →</div>
     </a>
-    <a class="teaser-card" href="contact.html">
+    <a class="teaser-card" href="{{ '/contact/' | relative_url }}">
       <i class="fas fa-comment-dots teaser-icon"></i>
       <div class="teaser-stat">Let's talk</div>
       <div class="teaser-label">Open to Data Analyst roles →</div>

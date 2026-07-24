@@ -1,0 +1,6 @@
+title: John Lee Portfolio
+url: "https://johnldh1997.github.io"
+baseurl: "/portfolio-website"
+
+plugins:
+  - jekyll-redirect-from

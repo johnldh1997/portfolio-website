@@ -2,6 +2,9 @@
 nav: contact
 title: "John Lee | Contact"
 description: "Get in touch with John Lee — email, phone, and GitHub links for professional inquiries."
+permalink: /contact/
+redirect_from:
+  - /contact.html
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +17,9 @@ description: "Get in touch with John Lee — email, phone, and GitHub links for 
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://johnldh1997.github.io/portfolio-website/{{ page.name }}" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
