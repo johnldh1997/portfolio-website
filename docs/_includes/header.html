@@ -1,0 +1,38 @@
+<header>
+  <a class="logo" href="index.html">JOHN<span>.</span>LEE</a>
+  <div class="header-right">
+    <nav>
+      <ul class="tab-nav">
+        <li><a href="index.html"{% if page.nav == "home" %} class="active"{% endif %}><span>Home</span></a></li>
+        <li><a href="about.html"{% if page.nav == "about" %} class="active"{% endif %}><span>About</span></a></li>
+        <li><a href="cv.html"{% if page.nav == "cv" %} class="active"{% endif %}><span>CV</span></a></li>
+        <li><a href="portfolio.html"{% if page.nav == "portfolio" %} class="active"{% endif %}><span>Portfolio</span></a></li>
+        <li><a href="contact.html"{% if page.nav == "contact" %} class="active"{% endif %}><span>Contact</span></a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+      <div class="toggle-icon-wrap">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </div>
+    </button>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobilenav">
+  <a href="index.html"{% if page.nav == "home" %} class="active"{% endif %}>Home</a>
+  <a href="about.html"{% if page.nav == "about" %} class="active"{% endif %}>About</a>
+  <a href="cv.html"{% if page.nav == "cv" %} class="active"{% endif %}>CV</a>
+  <a href="portfolio.html"{% if page.nav == "portfolio" %} class="active"{% endif %}>Portfolio</a>
+  <a href="contact.html"{% if page.nav == "contact" %} class="active"{% endif %}>Contact</a>
+</div>
