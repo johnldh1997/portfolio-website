@@ -62,6 +62,9 @@ document.addEventListener('pointermove', (e) => {
 
   const dot = document.createElement('span');
   dot.className = 'cursor-trail-dot';
+  if (!document.documentElement.classList.contains('light-mode')) {
+    dot.textContent = '✦';
+  }
   dot.style.left = e.clientX + 'px';
   dot.style.top = e.clientY + 'px';
   document.body.appendChild(dot);
