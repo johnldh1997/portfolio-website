@@ -54,6 +54,82 @@ if (revealEls.length) {
   revealEls.forEach((el) => revealObserver.observe(el));
 }
 
+// ── PROJECT CAROUSEL ──
+document.querySelectorAll('.project-carousel').forEach((carousel) => {
+  const viewport = carousel.querySelector('.carousel-viewport');
+  const slides = [...viewport.querySelectorAll('.carousel-slide')];
+  const dots = [...carousel.parentElement.querySelectorAll('.carousel-dot')];
+  let index = 0;
+
+  function show(i) {
+    index = (i + slides.length) % slides.length;
+    slides.forEach((s, n) => s.classList.toggle('active', n === index));
+    dots.forEach((d, n) => d.classList.toggle('active', n === index));
+  }
+
+  carousel.querySelector('.carousel-prev').addEventListener('click', () => show(index - 1));
+  carousel.querySelector('.carousel-next').addEventListener('click', () => show(index + 1));
+  dots.forEach((dot, n) => dot.addEventListener('click', () => show(n)));
+});
+
+// ── SCREENSHOT LIGHTBOX ──
+const lightbox = document.getElementById('lightbox');
+if (lightbox) {
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  let gallery = [];
+  let galleryIndex = 0;
+  let lastTrigger = null;
+
+  function renderLightbox() {
+    const img = gallery[galleryIndex];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    const multi = gallery.length > 1;
+    prevBtn.style.visibility = multi ? 'visible' : 'hidden';
+    nextBtn.style.visibility = multi ? 'visible' : 'hidden';
+  }
+  function openLightbox(img) {
+    lastTrigger = img;
+    const card = img.closest('.project-card');
+    gallery = [...card.querySelectorAll('.project-screenshot, .project-screenshot-mobile')];
+    galleryIndex = gallery.indexOf(img);
+    renderLightbox();
+    lightbox.classList.add('open');
+    closeBtn.focus();
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+  function showRelative(delta) {
+    galleryIndex = (galleryIndex + delta + gallery.length) % gallery.length;
+    renderLightbox();
+  }
+
+  document.querySelectorAll('.project-screenshot, .project-screenshot-mobile').forEach((img) => {
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.addEventListener('click', () => openLightbox(img));
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img); }
+    });
+  });
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', () => showRelative(-1));
+  nextBtn.addEventListener('click', () => showRelative(1));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showRelative(-1);
+    if (e.key === 'ArrowRight') showRelative(1);
+  });
+}
+
 // ── CURSOR TRAIL ──
 let lastTrailTime = 0;
 document.addEventListener('pointermove', (e) => {

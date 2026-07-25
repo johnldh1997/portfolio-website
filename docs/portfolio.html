@@ -103,10 +103,19 @@ redirect_from:
       <div class="project-tag">Mobile App · Transport</div>
       <h3>Auckland Transit</h3>
       <p class="proj-desc">A personal, from-scratch alternative to Auckland Transport’s official app — features live vehicle tracking, journey planning with real-time GPS step tracking, background-surviving trip notifications, and an offline-first schedule database.</p>
-      <div class="project-screenshots-row">
-        <img class="project-screenshot-mobile" src="{{ '/images/projects/auckland-transit-plan-journey.jpg' | relative_url }}" alt="Auckland Transit journey planner with live bus stops shown on map" loading="lazy" />
-        <img class="project-screenshot-mobile" src="{{ '/images/projects/auckland-transit-route-options.jpg' | relative_url }}" alt="Auckland Transit route options showing travel times and transfers" loading="lazy" />
-        <img class="project-screenshot-mobile" src="{{ '/images/projects/auckland-transit-route-preview.jpg' | relative_url }}" alt="Auckland Transit turn-by-turn route preview with fare estimate" loading="lazy" />
+      <div class="project-carousel">
+        <button class="carousel-arrow carousel-prev" aria-label="Previous image">‹</button>
+        <div class="carousel-viewport">
+          <img class="project-screenshot-mobile carousel-slide active" src="{{ '/images/projects/auckland-transit-plan-journey.jpg' | relative_url }}" alt="Auckland Transit journey planner with live bus stops shown on map" loading="lazy" />
+          <img class="project-screenshot-mobile carousel-slide" src="{{ '/images/projects/auckland-transit-route-options.jpg' | relative_url }}" alt="Auckland Transit route options showing travel times and transfers" loading="lazy" />
+          <img class="project-screenshot-mobile carousel-slide" src="{{ '/images/projects/auckland-transit-route-preview.jpg' | relative_url }}" alt="Auckland Transit turn-by-turn route preview with fare estimate" loading="lazy" />
+        </div>
+        <button class="carousel-arrow carousel-next" aria-label="Next image">›</button>
+      </div>
+      <div class="carousel-dots">
+        <span class="carousel-dot active"></span>
+        <span class="carousel-dot"></span>
+        <span class="carousel-dot"></span>
       </div>
       <ul class="proj-bullets">
         <li>Built a compressed 58MB on-device SQLite database from AT's static GTFS feed, reducing raw GTFS data size by 64% to enable offline schedule querying</li>
@@ -132,6 +141,13 @@ redirect_from:
 
   </section>
 </main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot">
+  <button class="lightbox-close" aria-label="Close enlarged image">&times;</button>
+  <button class="lightbox-arrow lightbox-prev" aria-label="Previous image">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+  <button class="lightbox-arrow lightbox-next" aria-label="Next image">›</button>
+</div>
 
 {% include footer.html %}
 </body>
