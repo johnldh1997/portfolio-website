@@ -103,6 +103,11 @@ redirect_from:
       <div class="project-tag">Mobile App · Transport</div>
       <h3>Auckland Transit</h3>
       <p class="proj-desc">A personal, from-scratch alternative to Auckland Transport’s official app — features live vehicle tracking, journey planning with real-time GPS step tracking, background-surviving trip notifications, and an offline-first schedule database.</p>
+      <div class="project-screenshots-row">
+        <img class="project-screenshot-mobile" src="{{ '/images/projects/auckland-transit-plan-journey.jpg' | relative_url }}" alt="Auckland Transit journey planner with live bus stops shown on map" loading="lazy" />
+        <img class="project-screenshot-mobile" src="{{ '/images/projects/auckland-transit-route-options.jpg' | relative_url }}" alt="Auckland Transit route options showing travel times and transfers" loading="lazy" />
+        <img class="project-screenshot-mobile" src="{{ '/images/projects/auckland-transit-route-preview.jpg' | relative_url }}" alt="Auckland Transit turn-by-turn route preview with fare estimate" loading="lazy" />
+      </div>
       <ul class="proj-bullets">
         <li>Built a compressed 58MB on-device SQLite database from AT's static GTFS feed, reducing raw GTFS data size by 64% to enable offline schedule querying</li>
         <li>Implemented GPS-based step matching with schedule fallback and an Android foreground notification system that survives app termination</li>

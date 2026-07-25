@@ -500,6 +500,19 @@ li { margin: 7px 0; }
   transition: transform 0.3s ease;
 }
 .project-card:hover .project-screenshot { transform: scale(1.03); }
+.project-screenshots-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.project-screenshot-mobile {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+.project-card:hover .project-screenshot-mobile { transform: scale(1.03); }
 .proj-bullets { list-style: none; padding: 0; margin-bottom: 14px; }
 .proj-bullets li { font-size: 13px; color: var(--muted); padding: 3px 0 3px 16px; position: relative; }
 .proj-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: 11px; top: 4px; }
