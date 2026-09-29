@@ -1,67 +1,61 @@
-# 🌐 Personal Portfolio Website | John Lee
-> 🚀 **Live Production Deployment:** [👉 Click Here to View the Live Website](https://johnldh1997.github.io/portfolio-website/)
+# Portfolio website
 
-Welcome to the technical repository for my personal portfolio platform. This codebase serves as a standalone front-end engineering project, built entirely from scratch to demonstrate modern semantic web layout structures, responsive user interfaces, custom client-side states, and clean project asset organization.
+My personal portfolio site. Static HTML, CSS and vanilla JavaScript — no framework, no build step.
 
----
+**Live:** https://johnldh1997.github.io/portfolio-website/
 
-## 📂 Project Directory Structure
-To keep the root production workspace modular and maintainable, all production-ready user-facing files are decoupled into a dedicated deployment directory, which serves as the active hosting target source for GitHub Pages:
+## Pages
+
+| File | Contents |
+|---|---|
+| `index.html` | Landing page |
+| `about.html` | Background and summary |
+| `cv.html` | Skills and education |
+| `portfolio.html` | Project case studies |
+| `contact.html` | Contact details |
+
+## Built with
+
+- HTML5, CSS3 (custom properties, flexbox/grid, media queries)
+- Vanilla JavaScript (ES6+), no framework or build step
+- Inter via Google Fonts, Font Awesome icons
+- GitHub Pages for hosting
+
+## What's in it
+
+- **Screenshot lightbox** — opens on click or Enter/Space, closes on Escape or a
+  backdrop click, and arrow keys move between screenshots within the same project.
+  Focus moves to the close button on open and returns to the triggering image on
+  close, so it's usable without a mouse.
+- **Light/dark theme toggle** — stores the choice in `localStorage` and updates the
+  `theme-color` meta tag so mobile browser chrome matches the active theme.
+- **Project carousels** — previous/next buttons and clickable dots for projects with
+  multiple screenshots.
+- **Scroll reveal** — `IntersectionObserver` fades sections in as they enter the
+  viewport, unobserving each element once it has been shown.
+- **Responsive layout** — horizontal nav on desktop, burger menu on mobile.
+- **Typewriter banner** — cycles role titles on the landing page.
+- **Cursor trail** — throttled to ~30ms and skipped for non-mouse pointers.
+- Footer year is read from the system clock.
+
+## Structure
 
 ```text
-📦 portfolio-website
- ┣ 📂 docs                  <-- Active Production Target (GitHub Pages Source)
- ┃ ┣ 📂 css
- ┃ ┃ ┗ 📄 styles.css        [Global CSS Variables, Responsive Grids, Media Queries]
- ┃ ┣ 📂 js
- ┃ ┃ ┗ 📄 main.js           [State Switchers, Typewriter Loop, Temporal Engine]
- ┃ ┣ 📄 index.html          [Main Home Landing Page]
- ┃ ┣ 📄 about.html          [Background & Professional Summary]
- ┃ ┣ 📄 cv.html             [Technical Skills Matrix & Core Education Grid]
- ┃ ┣ 📄 portfolio.html      [Case Studies & Interactive Project Layouts]
- ┃ ┗ 📄 contact.html        [Network Channels & Outreach Panel]
- ┗ 📄 README.md             <-- Technical Documentation (Root)
+docs/                 <- GitHub Pages source
+├── css/styles.css
+├── js/main.js
+├── index.html
+├── about.html
+├── cv.html
+├── portfolio.html
+└── contact.html
 ```
 
-## 🛠️ Technology Stack & Core Competencies
-### Languages: 
-HTML5 (Semantic Document Structure) 
+## Running locally
 
-CSS3 (Custom Root Variables & Keyframes) 
+Clone the repo and open `docs/index.html` in a browser, or serve the `docs` folder
+with any static server. No dependencies to install.
 
-Vanilla JavaScript (ES6+ Native DOM Manipulation)
+## Deployment
 
-### Design Systems: 
-Inter Typography Ecosystem
-
-FontAwesome Icons
-
-### Development Workflow: 
-Visual Studio Code local IDE development 
-
-Live Server local workspace emulation 
-
-Git configuration control trackers 
-
-GitHub Pages static cloud hosting deployment
-
-## 🎨 Engineering & Frontend Techniques Used
-### 1. Light / Dark Theme Switcher
-**What it is:** A toggle button that instantly flips the website's appearance between a dark mode and a light mode.
-
-**How it works:** When clicked, it changes the background and text color variables across the whole site. It also securely saves your preference directly in your web browser's temporary memory, meaning the site will remember your preferred mode even if you refresh or switch pages.
-
-### 2. Auto-Updating Copyright Date
-**What it is:** A smart footer note at the bottom of each page that displays the copyright year.
-
-**How it works:** Instead of typing a static year that becomes outdated every January, a script checks the visitor's computer or phone clock when the page loads and automatically prints the current calendar year.
-
-### 3. Fluid Mobile-Responsive Design
-**What it is:** A layout system that ensures the website shrinks, resizes, and scales to look clean on any screen size.
-
-**How it works:** The structure dynamically repositions elements based on the display size. For example, on a large computer monitor, the navigation menu is flat across the top; on a small phone, it neatly tucks into a clickable slide-out "burger" menu icon.  
-
-### 4. Interactive Typewriter Banner
-**What it is:** An animated text sequence on the home screen that types out different professional roles.
-
-**How it works:** A background script loops through a list of job keywords (Data Analyst, Flutter Developer, BI Engineer, Software Developer, Problem Solver), typing them out letter-by-letter and deleting them before moving to the next title. 
+GitHub Pages, served from the `/docs` folder on `main`.
