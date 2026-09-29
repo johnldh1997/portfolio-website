@@ -120,7 +120,7 @@ redirect_from:
       <ul class="proj-bullets">
         <li>Built a compressed 58MB on-device SQLite database from AT's static GTFS feed, reducing raw GTFS data size by 64% to enable offline schedule querying</li>
         <li>Implemented GPS-based step matching with schedule fallback and an Android foreground notification system that survives app termination</li>
-        <li>Engineered custom map staleness fixes and synchronous OTA update checks via EAS Update for real-time tracking and continuous deployment</li>
+        <li>Diagnosed a stale offline database silently breaking route highlighting for 65% of live vehicles, rebuilding it from AT's current feed to restore full trip matching (35% → 100%)</li>
       </ul>
       <div class="tech-pills">
         <span class="tech-pill">React Native</span>
