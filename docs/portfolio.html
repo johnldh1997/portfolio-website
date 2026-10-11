@@ -100,15 +100,16 @@ redirect_from:
     </div>
 
     <div class="project-card reveal">
-      <div class="project-tag">Mobile App · Transport</div>
+      <div class="project-tag">Mobile App · Transport + AI</div>
       <h3>Compass AKL</h3>
-      <p class="proj-desc">A personal, from-scratch alternative to Auckland Transport’s official app — features live vehicle tracking, journey planning with real-time GPS step tracking, background-surviving trip notifications, and an offline-first schedule database.</p>
+      <p class="proj-desc">A personal, from-scratch alternative to Auckland Transport’s official app — features live vehicle tracking, journey planning with real-time GPS step tracking, background-surviving trip notifications, an offline-first schedule database, and an English/Korean AI chat that finds nearby places from a plain-language request (“European food near Britomart tomorrow at 5pm”).</p>
       <div class="project-carousel">
         <button class="carousel-arrow carousel-prev" aria-label="Previous image">‹</button>
         <div class="carousel-viewport">
-          <img class="project-screenshot-mobile carousel-slide active" src="{{ '/images/projects/auckland-transit-plan-journey.jpg' | relative_url }}" alt="Compass AKL live map with heading-direction vehicle badges and bordered stop markers" />
-          <img class="project-screenshot-mobile carousel-slide" src="{{ '/images/projects/auckland-transit-route-options.jpg' | relative_url }}" alt="Compass AKL route options showing travel times and transfers" />
-          <img class="project-screenshot-mobile carousel-slide" src="{{ '/images/projects/auckland-transit-route-preview.jpg' | relative_url }}" alt="Compass AKL route preview with the full per-leg stop list and fare estimate" />
+          <img class="project-screenshot-mobile carousel-slide active" src="{{ '/images/projects/compass-akl-plan-journey.jpg' | relative_url }}" alt="Compass AKL live map with heading-direction vehicle badges and bordered stop markers" />
+          <img class="project-screenshot-mobile carousel-slide" src="{{ '/images/projects/compass-akl-route-options.jpg' | relative_url }}" alt="Compass AKL route options showing travel times and transfers" />
+          <img class="project-screenshot-mobile carousel-slide" src="{{ '/images/projects/compass-akl-route-preview.jpg' | relative_url }}" alt="Compass AKL route preview with the full per-leg stop list and fare estimate" />
+          <img class="project-screenshot-mobile carousel-slide" src="{{ '/images/projects/compass-akl-nearby-search.jpg' | relative_url }}" alt="Compass AKL Find Nearby chat answering “European food near Britomart tomorrow at 5pm” with walking times, ratings and opening hours" />
         </div>
         <button class="carousel-arrow carousel-next" aria-label="Next image">›</button>
       </div>
@@ -116,11 +117,14 @@ redirect_from:
         <span class="carousel-dot active"></span>
         <span class="carousel-dot"></span>
         <span class="carousel-dot"></span>
+        <span class="carousel-dot"></span>
       </div>
       <ul class="proj-bullets">
         <li>Built a compressed 58MB on-device SQLite database from AT's static GTFS feed, reducing raw GTFS data size by 64% to enable offline schedule querying</li>
         <li>Implemented GPS-based step matching with schedule fallback and an Android foreground notification system that survives app termination</li>
         <li>Diagnosed a stale offline database silently breaking route highlighting for 65% of live vehicles, rebuilding it from AT's current feed to restore full trip matching (35% → 100%)</li>
+        <li>Built an English/Korean natural-language "Find Nearby" chat on a Cloudflare Worker with Claude: the model only extracts structured intent (category, place, day/time), while distance pruning, opening-hours matching and ranking run as unit-tested code against live Google Places and Routes data</li>
+        <li>Hardened it by testing paired English/Korean queries against the live endpoint, fixing the model inventing defaults (a silent 20-minute limit, "open now", "home" searched as a business called Home) instead of trusting the prompt</li>
       </ul>
       <div class="tech-pills">
         <span class="tech-pill">React Native</span>
@@ -129,11 +133,13 @@ redirect_from:
         <span class="tech-pill">SQLite</span>
         <span class="tech-pill">AT APIs</span>
         <span class="tech-pill">Google Routes API</span>
+        <span class="tech-pill">Claude API</span>
+        <span class="tech-pill">Cloudflare Workers</span>
         <span class="tech-pill">Python</span>
         <span class="tech-pill">EAS</span>
       </div>
       <div class="project-links">
-        <a href="https://github.com/johnldh1997/compass-akl" target="_blank">
+        <a href="https://github.com/johnldh1997/Compass-AKL" target="_blank">
           <i class="fab fa-github"></i> View Code
         </a>
       </div>
